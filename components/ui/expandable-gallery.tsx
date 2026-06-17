@@ -32,7 +32,7 @@ const PHOTOS: Photo[] = [
   { id: "photo-04", src: "/photos/photo-04.jpeg", alt: "Продукт — макро низ", width: 2400, height: 1792 },
   { id: "photo-05", src: "/photos/photo-05.jpeg", alt: "Продукт — багато",    width: 2400, height: 1792, wide: true },
   { id: "photo-06", src: "/photos/photo-06.jpeg", alt: "Продукт — 5 штук",    width: 2400, height: 1792 },
-  { id: "photo-07", src: "/photos/photo-07.jpeg", alt: "Продукт — дно",       width: 2400, height: 1792 },
+  { id: "photo-07", src: "/photos/photo-07.jpg", alt: "Продукт — 5 пляшок", width: 2400, height: 1600 },
   { id: "photo-09", src: "/photos/photo-09.jpeg", alt: "Продукт — повний",    width: 1536, height: 2752 },
   { id: "photo-08", src: "/photos/photo-08.jpeg", alt: "Продукти — коса",     width: 2752, height: 1536 },
   // Коробка (2 фото)
@@ -264,25 +264,18 @@ function MasonryGrid({
       }}
     >
       {photos.map((photo, index) => (
-        <motion.div
+        <motion.img
           key={`grid-${photo.id}`}
+          src={photo.src}
+          alt={photo.alt}
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: index * 0.02 }}
-          className="overflow-hidden rounded-xl md:rounded-2xl cursor-pointer bg-muted shadow-sm hover:shadow-md transition-shadow"
+          className="w-full block select-none cursor-pointer rounded-xl md:rounded-2xl hover:scale-[1.02] transition-transform duration-500"
           onClick={() => onPhotoClick(index)}
-        >
-          <Image
-            src={photo.src}
-            alt={photo.alt}
-            width={photo.width}
-            height={photo.height}
-            className="w-full h-auto block select-none pointer-events-none hover:scale-[1.02] transition-transform duration-500"
-            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-            draggable={false}
-            onContextMenu={(e) => e.preventDefault()}
-          />
-        </motion.div>
+          draggable={false}
+          onContextMenu={(e) => e.preventDefault()}
+        />
       ))}
     </motion.div>
   );
