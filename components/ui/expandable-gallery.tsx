@@ -59,10 +59,10 @@ const PHOTOS: Photo[] = [
 ];
 
 // The 3 photos shown in the stacked preview
-const STACK_PHOTOS: Photo[] = [
-  { id: "photo-10", src: "/photos/photo-10.jpeg", alt: "Басейн 1",  width: 2400, height: 1792, rotation: -15, x: -90, y: 10,  zIndex: 10 },
-  { id: "photo-13", src: "/photos/photo-13.jpeg", alt: "Кейс 3",    width: 1792, height: 2400, rotation: -3,  x: -10, y: -15, zIndex: 20 },
-  { id: "photo-26", src: "/photos/photo-26.jpeg", alt: "Фрукти 3",  width: 1792, height: 2400, rotation: 12,  x: 75,  y: 5,   zIndex: 30 },
+const STACK_PHOTOS = [
+  { id: "photo-10", src: "/photos/photo-10.jpeg", alt: "Басейн 1",  width: 2400, height: 1792, rotation: -15, x: -90, y: 10,  xSm: -55, ySm: 8,   zIndex: 10 },
+  { id: "photo-13", src: "/photos/photo-13.jpeg", alt: "Кейс 3",    width: 1792, height: 2400, rotation: -3,  x: -10, y: -15, xSm: -6,  ySm: -10, zIndex: 20 },
+  { id: "photo-26", src: "/photos/photo-26.jpeg", alt: "Фрукти 3",  width: 1792, height: 2400, rotation: 12,  x: 75,  y: 5,   xSm: 48,  ySm: 4,   zIndex: 30 },
 ];
 
 const transition = {
@@ -290,6 +290,13 @@ export function ExpandableGallery() {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const layoutGroupId = useId();
   const containerRef = useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 640);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
 
   // Close gallery only when lightbox is NOT open
   useOutsideClick(containerRef, () => {
@@ -315,7 +322,7 @@ export function ExpandableGallery() {
         )}
       </AnimatePresence>
 
-      <section className="relative w-full bg-background flex flex-col items-center justify-start min-h-[850px] overflow-hidden">
+      <section className="relative w-full bg-background flex flex-col items-center justify-start min-h-[850px]">
         <LayoutGroup id={layoutGroupId}>
           <div className={`w-full flex flex-col items-center ${isExpanded ? "" : "max-w-6xl mx-auto px-4 md:px-8"}`}>
             {/* Back button row */}
@@ -348,7 +355,7 @@ export function ExpandableGallery() {
               {/* Collapsed: stacked preview */}
               {!isExpanded && (
                 <div className="flex flex-col items-center pt-4">
-                  <div className="h-[300px] md:h-[320px] w-full flex items-center justify-center mb-12">
+                  <div className="h-[200px] sm:h-[260px] md:h-[320px] w-full flex items-center justify-center mb-6 md:mb-12">
                     {STACK_PHOTOS.map((photo, index) => (
                       <motion.div
                         key={`stack-${photo.id}`}
@@ -357,19 +364,19 @@ export function ExpandableGallery() {
                           opacity: 1,
                           scale: 1,
                           rotate: photo.rotation || 0,
-                          x: photo.x || 0,
-                          y: photo.y || 0,
+                          x: isMobile ? (photo.xSm ?? photo.x ?? 0) : (photo.x || 0),
+                          y: isMobile ? (photo.ySm ?? photo.y ?? 0) : (photo.y || 0),
                           zIndex: photo.zIndex || index,
                         }}
                         transition={transition}
                         whileHover={{
                           scale: 1.05,
-                          y: (photo.y || 0) - 15,
+                          y: (isMobile ? (photo.ySm ?? photo.y ?? 0) : (photo.y || 0)) - 15,
                           rotate: (photo.rotation || 0) * 0.8,
                           zIndex: 50,
                           transition: { type: "spring", stiffness: 400, damping: 25 },
                         }}
-                        className="absolute w-44 h-44 md:w-60 md:h-60 rounded-[2.5rem] md:rounded-[3rem] border-[6px] border-background shadow-[0_20px_50px_rgba(0,0,0,0.15)] cursor-pointer overflow-hidden bg-muted"
+                        className="absolute w-32 h-32 sm:w-44 sm:h-44 md:w-60 md:h-60 rounded-[1.5rem] sm:rounded-[2.5rem] md:rounded-[3rem] border-[6px] border-background shadow-[0_20px_50px_rgba(0,0,0,0.15)] cursor-pointer overflow-hidden bg-muted"
                         onClick={() => setIsExpanded(true)}
                       >
                         <Image
