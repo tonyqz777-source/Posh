@@ -12,6 +12,7 @@ import { cn } from "@/lib/utils";
 type Photo = {
   id: string;
   src: string;
+  thumbSrc: string;
   alt: string;
   width: number;
   height: number;
@@ -26,35 +27,35 @@ type Photo = {
 // 3 landscape photos marked wide:true to span 2 columns (spread across gallery)
 const PHOTOS: Photo[] = [
   // Продукт (9 фото)
-  { id: "photo-01", src: "/photos/photo-01.jpeg", alt: "Продукт — кришка",    width: 1792, height: 2400 },
-  { id: "photo-02", src: "/photos/photo-02.jpeg", alt: "Продукт — етикетка",  width: 2400, height: 1792 },
-  { id: "photo-03", src: "/photos/photo-03.jpeg", alt: "Продукт — крупний",   width: 2400, height: 1792 },
-  { id: "photo-04", src: "/photos/photo-04.jpeg", alt: "Продукт — макро низ", width: 2400, height: 1792 },
-  { id: "photo-05", src: "/photos/photo-05.jpeg", alt: "Продукт — багато",    width: 2400, height: 1792, wide: true },
-  { id: "photo-07", src: "/photos/photo-07.jpg", alt: "Продукт — 5 пляшок", width: 2400, height: 1600 },
-  { id: "photo-09", src: "/photos/photo-09.jpeg", alt: "Продукт — повний",    width: 1536, height: 2752 },
-  { id: "photo-08", src: "/photos/photo-08.jpeg", alt: "Продукти — коса",     width: 2752, height: 1536 },
+  { id: "photo-01", src: "/photos/photo-01.jpeg", thumbSrc: "/photos/photo-01-thumb.jpeg", alt: "Продукт — кришка",    width: 1792, height: 2400 },
+  { id: "photo-02", src: "/photos/photo-02.jpeg", thumbSrc: "/photos/photo-02-thumb.jpeg", alt: "Продукт — етикетка",  width: 2400, height: 1792 },
+  { id: "photo-03", src: "/photos/photo-03.jpeg", thumbSrc: "/photos/photo-03-thumb.jpeg", alt: "Продукт — крупний",   width: 2400, height: 1792 },
+  { id: "photo-04", src: "/photos/photo-04.jpeg", thumbSrc: "/photos/photo-04-thumb.jpeg", alt: "Продукт — макро низ", width: 2400, height: 1792 },
+  { id: "photo-05", src: "/photos/photo-05.jpeg", thumbSrc: "/photos/photo-05-thumb.jpeg", alt: "Продукт — багато",    width: 2400, height: 1792, wide: true },
+  { id: "photo-07", src: "/photos/photo-07.jpg",  thumbSrc: "/photos/photo-07-thumb.jpg",  alt: "Продукт — 5 пляшок", width: 2400, height: 1600 },
+  { id: "photo-09", src: "/photos/photo-09.jpeg", thumbSrc: "/photos/photo-09-thumb.jpeg", alt: "Продукт — повний",    width: 1536, height: 2752 },
+  { id: "photo-08", src: "/photos/photo-08.jpeg", thumbSrc: "/photos/photo-08-thumb.jpeg", alt: "Продукти — коса",     width: 2752, height: 1536 },
   // Коробка (2 фото)
-  { id: "photo-16", src: "/photos/photo-16.jpeg", alt: "Коробка 1",           width: 2400, height: 1792 },
-  { id: "photo-17", src: "/photos/photo-17.jpeg", alt: "Коробка макро",       width: 2400, height: 1792 },
+  { id: "photo-16", src: "/photos/photo-16.jpeg", thumbSrc: "/photos/photo-16-thumb.jpeg", alt: "Коробка 1",           width: 2400, height: 1792 },
+  { id: "photo-17", src: "/photos/photo-17.jpeg", thumbSrc: "/photos/photo-17-thumb.jpeg", alt: "Коробка макро",       width: 2400, height: 1792 },
   // Супермаркет (3 фото)
-  { id: "photo-21", src: "/photos/photo-21.jpeg", alt: "Супермаркет 1",       width: 2400, height: 1792 },
-  { id: "photo-22", src: "/photos/photo-22.jpeg", alt: "Супермаркет 2",       width: 2400, height: 1792 },
-  { id: "photo-23", src: "/photos/photo-23.jpeg", alt: "Супермаркет 3",       width: 2400, height: 1792 },
-  // Небо + Басейн (перемішані: Небо 1, Басейн 1×2col, Небо і фрукти×2col, Небо 2, Басейн 2)
-  { id: "photo-18", src: "/photos/photo-18.jpeg", alt: "Небо 1",              width: 1792, height: 2400 },
-  { id: "photo-10", src: "/photos/photo-10.jpeg", alt: "Басейн 1",            width: 2400, height: 1792, wide: true },
-  { id: "photo-20", src: "/photos/photo-20.jpeg", alt: "Небо і фрукти",       width: 1792, height: 2400, wide: true },
-  { id: "photo-19", src: "/photos/photo-19.jpeg", alt: "Небо 2",              width: 1792, height: 2400 },
-  { id: "photo-11", src: "/photos/photo-11.jpeg", alt: "Басейн 2",            width: 1792, height: 2400 },
+  { id: "photo-21", src: "/photos/photo-21.jpeg", thumbSrc: "/photos/photo-21-thumb.jpeg", alt: "Супермаркет 1",       width: 2400, height: 1792 },
+  { id: "photo-22", src: "/photos/photo-22.jpeg", thumbSrc: "/photos/photo-22-thumb.jpeg", alt: "Супермаркет 2",       width: 2400, height: 1792 },
+  { id: "photo-23", src: "/photos/photo-23.jpeg", thumbSrc: "/photos/photo-23-thumb.jpeg", alt: "Супермаркет 3",       width: 2400, height: 1792 },
+  // Небо + Басейн
+  { id: "photo-18", src: "/photos/photo-18.jpeg", thumbSrc: "/photos/photo-18-thumb.jpeg", alt: "Небо 1",              width: 1792, height: 2400 },
+  { id: "photo-10", src: "/photos/photo-10.jpeg", thumbSrc: "/photos/photo-10-thumb.jpeg", alt: "Басейн 1",            width: 2400, height: 1792, wide: true },
+  { id: "photo-20", src: "/photos/photo-20.jpeg", thumbSrc: "/photos/photo-20-thumb.jpeg", alt: "Небо і фрукти",       width: 1792, height: 2400, wide: true },
+  { id: "photo-19", src: "/photos/photo-19.jpeg", thumbSrc: "/photos/photo-19-thumb.jpeg", alt: "Небо 2",              width: 1792, height: 2400 },
+  { id: "photo-11", src: "/photos/photo-11.jpeg", thumbSrc: "/photos/photo-11-thumb.jpeg", alt: "Басейн 2",            width: 1792, height: 2400 },
   // Фрукти (3 фото)
-  { id: "photo-24", src: "/photos/photo-24.jpeg", alt: "Фрукти 1",            width: 2400, height: 1792, wide: true },
-  { id: "photo-25", src: "/photos/photo-25.jpeg", alt: "Фрукти 2",            width: 1792, height: 2400 },
-  { id: "photo-26", src: "/photos/photo-26.jpeg", alt: "Фрукти 3",            width: 1792, height: 2400 },
-  // Кейси (3 фото) — останні
-  { id: "photo-13", src: "/photos/photo-13.jpeg", alt: "Кейс 3",              width: 1792, height: 2400 },
-  { id: "photo-14", src: "/photos/photo-14.jpeg", alt: "Кейс літає",          width: 2400, height: 1792, wide: true },
-  { id: "photo-15", src: "/photos/photo-15.jpeg", alt: "Кейси",               width: 2400, height: 1792 },
+  { id: "photo-24", src: "/photos/photo-24.jpeg", thumbSrc: "/photos/photo-24-thumb.jpeg", alt: "Фрукти 1",            width: 2400, height: 1792, wide: true },
+  { id: "photo-25", src: "/photos/photo-25.jpeg", thumbSrc: "/photos/photo-25-thumb.jpeg", alt: "Фрукти 2",            width: 1792, height: 2400 },
+  { id: "photo-26", src: "/photos/photo-26.jpeg", thumbSrc: "/photos/photo-26-thumb.jpeg", alt: "Фрукти 3",            width: 1792, height: 2400 },
+  // Кейси (3 фото)
+  { id: "photo-13", src: "/photos/photo-13.jpeg", thumbSrc: "/photos/photo-13-thumb.jpeg", alt: "Кейс 3",              width: 1792, height: 2400 },
+  { id: "photo-14", src: "/photos/photo-14.jpeg", thumbSrc: "/photos/photo-14-thumb.jpeg", alt: "Кейс літає",          width: 2400, height: 1792, wide: true },
+  { id: "photo-15", src: "/photos/photo-15.jpeg", thumbSrc: "/photos/photo-15-thumb.jpeg", alt: "Кейси",               width: 2400, height: 1792 },
 ];
 
 // The 3 photos shown in the stacked preview
@@ -269,7 +270,7 @@ function MasonryGrid({
           onClick={() => onPhotoClick(index)}
         >
           <Image
-            src={photo.src}
+            src={photo.thumbSrc}
             alt={photo.alt}
             width={photo.width}
             height={photo.height}
