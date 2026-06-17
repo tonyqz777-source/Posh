@@ -49,3 +49,7 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.center-text p {
+  text-align: center !important;
+}
