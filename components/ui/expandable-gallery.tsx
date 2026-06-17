@@ -273,7 +273,7 @@ function MasonryGrid({
             alt={photo.alt}
             width={photo.width}
             height={photo.height}
-            className="w-full h-auto block select-none pointer-events-none group-hover:scale-[1.04] transition-transform duration-500"
+            className="w-full h-auto block select-none pointer-events-none scale-[1.05] group-hover:scale-[1.08] transition-transform duration-500"
             sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
             draggable={false}
             onContextMenu={(e) => e.preventDefault()}
