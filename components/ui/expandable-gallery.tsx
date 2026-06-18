@@ -60,8 +60,8 @@ const PHOTOS: Photo[] = [
 // The 3 photos shown in the stacked preview
 const STACK_PHOTOS = [
   { id: "photo-10", src: "/photos/photo-10.jpeg", alt: "Басейн 1",  width: 2400, height: 1792, rotation: -15, x: -90, y: 10,  xSm: -55, ySm: 8,   zIndex: 10 },
-  { id: "photo-13", src: "/photos/photo-13.jpeg", alt: "Кейс 3",    width: 1792, height: 2400, rotation: -3,  x: -10, y: -15, xSm: -6,  ySm: -10, zIndex: 20 },
-  { id: "photo-26", src: "/photos/photo-26.jpeg", alt: "Фрукти 3",  width: 1792, height: 2400, rotation: 12,  x: 75,  y: 5,   xSm: 48,  ySm: 4,   zIndex: 30 },
+  { id: "photo-26", src: "/photos/photo-26.jpeg", alt: "Фрукти 3",  width: 1792, height: 2400, rotation: -3,  x: -10, y: -15, xSm: -6,  ySm: -10, zIndex: 20 },
+  { id: "photo-13", src: "/photos/photo-13.jpeg", alt: "Кейс 3",    width: 1792, height: 2400, rotation: 12,  x: 75,  y: 5,   xSm: 48,  ySm: 4,   zIndex: 30 },
 ];
 
 const transition = {
