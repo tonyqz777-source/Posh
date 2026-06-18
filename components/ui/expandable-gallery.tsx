@@ -28,7 +28,6 @@ type Photo = {
 const PHOTOS: Photo[] = [
   // Кейси
   { id: "photo-14", src: "/photos/photo-14.jpeg", thumbSrc: "/photos/photo-14-thumb.jpeg", alt: "Кейс літає",          width: 2400, height: 1792, wide: true },
-  { id: "photo-13", src: "/photos/photo-13.jpeg", thumbSrc: "/photos/photo-13-thumb.jpeg", alt: "Кейс 3",              width: 1792, height: 2400 },
   // Фрукти
   { id: "photo-26", src: "/photos/photo-26.jpeg", thumbSrc: "/photos/photo-26-thumb.jpeg", alt: "Фрукти 3",            width: 1792, height: 2400 },
   { id: "photo-25", src: "/photos/photo-25.jpeg", thumbSrc: "/photos/photo-25-thumb.jpeg", alt: "Фрукти 2",            width: 1792, height: 2400 },
