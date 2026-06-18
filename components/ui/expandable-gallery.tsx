@@ -26,36 +26,36 @@ type Photo = {
 // Order: Продукт → Небо → Басейн → Фрукти → Коробка → Супермаркет → Кейси
 // 3 landscape photos marked wide:true to span 2 columns (spread across gallery)
 const PHOTOS: Photo[] = [
-  // Продукт (9 фото)
-  { id: "photo-01", src: "/photos/photo-01.jpeg", thumbSrc: "/photos/photo-01-thumb.jpeg", alt: "Продукт — кришка",    width: 1792, height: 2400 },
-  { id: "photo-02", src: "/photos/photo-02.jpeg", thumbSrc: "/photos/photo-02-thumb.jpeg", alt: "Продукт — етикетка",  width: 2400, height: 1792 },
-  { id: "photo-03", src: "/photos/photo-03.jpeg", thumbSrc: "/photos/photo-03-thumb.jpeg", alt: "Продукт — крупний",   width: 2400, height: 1792 },
-  { id: "photo-04", src: "/photos/photo-04.jpeg", thumbSrc: "/photos/photo-04-thumb.jpeg", alt: "Продукт — макро низ", width: 2400, height: 1792 },
-  { id: "photo-05", src: "/photos/photo-05.jpeg", thumbSrc: "/photos/photo-05-thumb.jpeg", alt: "Продукт — багато",    width: 2400, height: 1792, wide: true },
-  { id: "photo-07", src: "/photos/photo-07.jpg",  thumbSrc: "/photos/photo-07-thumb.jpg",  alt: "Продукт — 5 пляшок", width: 2400, height: 1600 },
-  { id: "photo-09", src: "/photos/photo-09.jpeg", thumbSrc: "/photos/photo-09-thumb.jpeg", alt: "Продукт — повний",    width: 1536, height: 2752 },
-  { id: "photo-08", src: "/photos/photo-08.jpeg", thumbSrc: "/photos/photo-08-thumb.jpeg", alt: "Продукти — коса",     width: 2752, height: 1536 },
-  // Коробка (2 фото)
-  { id: "photo-16", src: "/photos/photo-16.jpeg", thumbSrc: "/photos/photo-16-thumb.jpeg", alt: "Коробка 1",           width: 2400, height: 1792 },
-  { id: "photo-17", src: "/photos/photo-17.jpeg", thumbSrc: "/photos/photo-17-thumb.jpeg", alt: "Коробка макро",       width: 2400, height: 1792 },
-  // Супермаркет (3 фото)
-  { id: "photo-21", src: "/photos/photo-21.jpeg", thumbSrc: "/photos/photo-21-thumb.jpeg", alt: "Супермаркет 1",       width: 2400, height: 1792 },
-  { id: "photo-22", src: "/photos/photo-22.jpeg", thumbSrc: "/photos/photo-22-thumb.jpeg", alt: "Супермаркет 2",       width: 2400, height: 1792 },
-  { id: "photo-23", src: "/photos/photo-23.jpeg", thumbSrc: "/photos/photo-23-thumb.jpeg", alt: "Супермаркет 3",       width: 2400, height: 1792 },
-  // Небо + Басейн
-  { id: "photo-18", src: "/photos/photo-18.jpeg", thumbSrc: "/photos/photo-18-thumb.jpeg", alt: "Небо 1",              width: 1792, height: 2400 },
-  { id: "photo-10", src: "/photos/photo-10.jpeg", thumbSrc: "/photos/photo-10-thumb.jpeg", alt: "Басейн 1",            width: 2400, height: 1792, wide: true },
-  { id: "photo-20", src: "/photos/photo-20.jpeg", thumbSrc: "/photos/photo-20-thumb.jpeg", alt: "Небо і фрукти",       width: 1792, height: 2400, wide: true },
-  { id: "photo-19", src: "/photos/photo-19.jpeg", thumbSrc: "/photos/photo-19-thumb.jpeg", alt: "Небо 2",              width: 1792, height: 2400 },
-  { id: "photo-11", src: "/photos/photo-11.jpeg", thumbSrc: "/photos/photo-11-thumb.jpeg", alt: "Басейн 2",            width: 1792, height: 2400 },
-  // Фрукти (3 фото)
-  { id: "photo-24", src: "/photos/photo-24.jpeg", thumbSrc: "/photos/photo-24-thumb.jpeg", alt: "Фрукти 1",            width: 2400, height: 1792, wide: true },
-  { id: "photo-25", src: "/photos/photo-25.jpeg", thumbSrc: "/photos/photo-25-thumb.jpeg", alt: "Фрукти 2",            width: 1792, height: 2400 },
-  { id: "photo-26", src: "/photos/photo-26.jpeg", thumbSrc: "/photos/photo-26-thumb.jpeg", alt: "Фрукти 3",            width: 1792, height: 2400 },
-  // Кейси (3 фото)
-  { id: "photo-13", src: "/photos/photo-13.jpeg", thumbSrc: "/photos/photo-13-thumb.jpeg", alt: "Кейс 3",              width: 1792, height: 2400 },
+  // Кейси
   { id: "photo-14", src: "/photos/photo-14.jpeg", thumbSrc: "/photos/photo-14-thumb.jpeg", alt: "Кейс літає",          width: 2400, height: 1792, wide: true },
+  { id: "photo-13", src: "/photos/photo-13.jpeg", thumbSrc: "/photos/photo-13-thumb.jpeg", alt: "Кейс 3",              width: 1792, height: 2400 },
+  // Фрукти
+  { id: "photo-26", src: "/photos/photo-26.jpeg", thumbSrc: "/photos/photo-26-thumb.jpeg", alt: "Фрукти 3",            width: 1792, height: 2400 },
+  { id: "photo-25", src: "/photos/photo-25.jpeg", thumbSrc: "/photos/photo-25-thumb.jpeg", alt: "Фрукти 2",            width: 1792, height: 2400 },
+  { id: "photo-24", src: "/photos/photo-24.jpeg", thumbSrc: "/photos/photo-24-thumb.jpeg", alt: "Фрукти 1",            width: 2400, height: 1792, wide: true },
+  // Небо + Басейн
+  { id: "photo-11", src: "/photos/photo-11.jpeg", thumbSrc: "/photos/photo-11-thumb.jpeg", alt: "Басейн 2",            width: 1792, height: 2400 },
+  { id: "photo-19", src: "/photos/photo-19.jpeg", thumbSrc: "/photos/photo-19-thumb.jpeg", alt: "Небо 2",              width: 1792, height: 2400 },
+  { id: "photo-20", src: "/photos/photo-20.jpeg", thumbSrc: "/photos/photo-20-thumb.jpeg", alt: "Небо і фрукти",       width: 1792, height: 2400, wide: true },
+  { id: "photo-10", src: "/photos/photo-10.jpeg", thumbSrc: "/photos/photo-10-thumb.jpeg", alt: "Басейн 1",            width: 2400, height: 1792, wide: true },
+  { id: "photo-18", src: "/photos/photo-18.jpeg", thumbSrc: "/photos/photo-18-thumb.jpeg", alt: "Небо 1",              width: 1792, height: 2400 },
+  // Супермаркет
+  { id: "photo-23", src: "/photos/photo-23.jpeg", thumbSrc: "/photos/photo-23-thumb.jpeg", alt: "Супермаркет 3",       width: 2400, height: 1792 },
   { id: "photo-15", src: "/photos/photo-15.jpeg", thumbSrc: "/photos/photo-15-thumb.jpeg", alt: "Кейси",               width: 2400, height: 1792 },
+  { id: "photo-22", src: "/photos/photo-22.jpeg", thumbSrc: "/photos/photo-22-thumb.jpeg", alt: "Супермаркет 2",       width: 2400, height: 1792 },
+  { id: "photo-21", src: "/photos/photo-21.jpeg", thumbSrc: "/photos/photo-21-thumb.jpeg", alt: "Супермаркет 1",       width: 2400, height: 1792 },
+  // Коробка
+  { id: "photo-17", src: "/photos/photo-17.jpeg", thumbSrc: "/photos/photo-17-thumb.jpeg", alt: "Коробка макро",       width: 2400, height: 1792 },
+  { id: "photo-16", src: "/photos/photo-16.jpeg", thumbSrc: "/photos/photo-16-thumb.jpeg", alt: "Коробка 1",           width: 2400, height: 1792 },
+  // Продукт
+  { id: "photo-08", src: "/photos/photo-08.jpeg", thumbSrc: "/photos/photo-08-thumb.jpeg", alt: "Продукти — коса",     width: 2752, height: 1536 },
+  { id: "photo-09", src: "/photos/photo-09.jpeg", thumbSrc: "/photos/photo-09-thumb.jpeg", alt: "Продукт — повний",    width: 1536, height: 2752 },
+  { id: "photo-07", src: "/photos/photo-07.jpg",  thumbSrc: "/photos/photo-07-thumb.jpg",  alt: "Продукт — 5 пляшок", width: 2400, height: 1600 },
+  { id: "photo-05", src: "/photos/photo-05.jpeg", thumbSrc: "/photos/photo-05-thumb.jpeg", alt: "Продукт — багато",    width: 2400, height: 1792, wide: true },
+  { id: "photo-04", src: "/photos/photo-04.jpeg", thumbSrc: "/photos/photo-04-thumb.jpeg", alt: "Продукт — макро низ", width: 2400, height: 1792 },
+  { id: "photo-03", src: "/photos/photo-03.jpeg", thumbSrc: "/photos/photo-03-thumb.jpeg", alt: "Продукт — крупний",   width: 2400, height: 1792 },
+  { id: "photo-02", src: "/photos/photo-02.jpeg", thumbSrc: "/photos/photo-02-thumb.jpeg", alt: "Продукт — етикетка",  width: 2400, height: 1792 },
+  { id: "photo-01", src: "/photos/photo-01.jpeg", thumbSrc: "/photos/photo-01-thumb.jpeg", alt: "Продукт — кришка",    width: 1792, height: 2400 },
 ];
 
 // The 3 photos shown in the stacked preview
@@ -400,19 +400,15 @@ export function ExpandableGallery() {
                     className="text-center max-w-2xl w-full space-y-8"
                   >
                     <h2 className="text-2xl md:text-4xl font-normal tracking-tight text-foreground/90 leading-tight">
-                      Привіт, POSH!
+                      Cześć Boostiva!
                     </h2>
-                    <div className="center-text text-sm md:text-base text-muted-foreground leading-relaxed space-y-4">
-                      <p>Мене звати Антон. Я продуктовий дизайнер з 7-річним досвідом — весь цей час проектував цифрові продукти та працював з AI-інструментами. Робота із зображеннями завжди була частиною цього: ретуш, фотоманіпуляції, мокапи для реальних комерційних проектів.</p>
-                      <p>Зараз активно занурююсь у генерацію продуктових візуалів — тестую інструменти, вивчаю як працювати зі світлом, матеріалами і композицією в AI-середовищі. Ось кілька ідей для вашого тестового завдання.</p>
-                    </div>
                     <div className="flex justify-center">
                       <Button
                         variant="default"
                         onClick={() => setIsExpanded(true)}
                         className="rounded-full cursor-pointer py-6 px-8 font-normal group"
                       >
-                        Переглянути всі фото
+                        Zobacz wizualizacje
                         <HugeiconsIcon
                           icon={ArrowRight01Icon}
                           className="transition-transform group-hover:translate-x-1"
